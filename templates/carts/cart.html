@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block head_title %}Cart{% endblock %}
+
+{% block content %}
+<section class="clearfix">
+
+    <h2 class="section-headline">Cart</h2>
+    <p class="section-description">
+        Please check your products before checkout.
+    </p>
+
+    <div class="cart">
+        <ul>
+            {% for product in products %}
+            <li class="item">
+                <div class="cart-product-img">
+                    <img src="{{ product.image.url }}" alt="" />
+                </div>
+                <div>
+                    <h3>{{ product.title | capfirst }}</h3>
+                </div>
+                <div>
+                    <p>${{ product.price | floatformat:2 }}</p>
+                </div>
+                <div>
+                    <a href="{% url 'remove_from_cart' product_id=product.id %}" class="remove">x</a>
+                </div>
+            </li>
+            {% empty %}
+            <li>
+                <p>No products yet.</p>
+            </li>
+            {% endfor %}
+
+            {% comment %} {% if cart.items.all.count > 0 %} {% endcomment %}
+            <li class="item" id="cart-summary">
+                <div>
+                    <p></p>
+                </div>
+                <div>
+                    <h3>Total</h3>
+                </div>
+                <div>
+                    <p>${{ total_price }}</p>
+                </div>
+                <div>
+                    <a href="{% url 'order' %}" class="checkout">Checkout</a>
+                    <a href="{% url 'clear_all_cart' %}" class="clear">Clear Cart</a>
+                </div>
+            </li>
+            {% comment %} {% endif%} {% endcomment %}
+        </ul>
+    </div>
+</section>
+
+{% endblock %}
