@@ -5,7 +5,11 @@ import dj_database_url
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+<<<<<<< HEAD
 DEBUG = Tr
+=======
+DEBUG = True
+>>>>>>> main
 
 ALLOWED_HOSTS = ['djangonewapp.herokuapp.com']
 
@@ -15,6 +19,7 @@ DATABASES_URL = os.environ.get('DATABASES_URL')
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASES_URL'))
 }
+<<<<<<< HEAD
 
 # Email
 
@@ -27,3 +32,5 @@ EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+=======
+>>>>>>> main
