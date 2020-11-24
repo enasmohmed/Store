@@ -13,5 +13,5 @@ DATABASES_URL = os.environ.get('DATABASES_URL')
 
 
 DATABASES = {
-    'default': dj_database_url.config(os.environ.get('DATABASES_URL'))
+    'default': dj_database_url.config(default=os.environ.get('DATABASES_URL'))
 }
