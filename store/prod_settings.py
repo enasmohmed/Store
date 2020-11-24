@@ -5,7 +5,7 @@ import dj_database_url
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['djangonewapp.herokuapp.com']
 
