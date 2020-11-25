@@ -5,6 +5,11 @@ import dj_database_url
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+debug_option = os.environ.get('SECRET_KEY')
+if debug_option == 'true':
+    DEBUG = True
+else:
+    DEBUG = False
 
 DEBUG = True
 
