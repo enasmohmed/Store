@@ -13,7 +13,7 @@ else:
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangonewapp.herokuapp.com', 'Enas2Mohamed.pythonanywhere.com']
+ALLOWED_HOSTS = ['djangonewapp.herokuapp.com', 'enas2mohamed.pythonanywhere.com']
 
 DATABASES_URL = os.environ.get('DATABASES_URL')
 
